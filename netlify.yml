@@ -15,7 +15,8 @@ pages:
     label: "Page"
     delete: false
     editor:
-      preview: true
+      preview: false
+      markdown: false
     # fields: 
 # through hexo config over fields
 over_format: true
