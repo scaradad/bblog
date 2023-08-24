@@ -109,4 +109,4 @@ deploy:
 toc: true
 mathjax: true
 netlify_cms:
-  config_file: netlify.yml
+  config_file: netlify.yaml
