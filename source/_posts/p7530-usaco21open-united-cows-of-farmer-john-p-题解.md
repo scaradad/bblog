@@ -19,7 +19,7 @@ $1\leq n\leq 2\times 10^5$。
 
 [link](https://www.luogu.com.cn/problem/P7530)
 
-<﻿!--more-->
+<!--more-->
 
 ## Solution
 
