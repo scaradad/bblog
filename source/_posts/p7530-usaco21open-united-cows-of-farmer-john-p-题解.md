@@ -13,7 +13,7 @@ comments: true
 ---
 ## Description
 
-给定一个长度为 $n$ 的数组 $a$，求其中数对 $(l,r,x)$ 的个数，满足 $1\leq l<x<r\leq n$ 且 $\[l,r]$ 中 $a_l,a_r,a_x$ 均只出现了一次。
+给定一个长度为 $n$ 的数组 $a$，求其中数对 $(l,r,x)$ 的个数，满足 $1\leq l<x<r\leq n$ 且 $\\[l,r\]$ 中 $a_l,a_r,a_x$ 均只出现了一次。
 
 $1\leq n\leq 2\times 10^5$。
 
