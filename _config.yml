@@ -107,6 +107,6 @@ deploy:
   branch: main
 
 toc: true
-mathjax: true
+
 netlify_cms:
   config_file: netlify.yaml
