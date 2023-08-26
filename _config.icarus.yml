@@ -165,13 +165,6 @@ search:
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
-    type: gitalk
-    client_id: 7b7f10f5c449865d69cd
-    client_secret: 8f7b4aea34e67d03d422eccf329443a6268ad58d
-    repo: scaradad.github.io
-    owner: scaradad
-    admin:
-        - scaradad
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
 # donates:
