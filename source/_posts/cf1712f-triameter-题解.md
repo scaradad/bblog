@@ -32,13 +32,13 @@ $3\leq n\leq 10^6,1\leq q\leq 10$
 
 如果当前的答案为 $ans$，$d(u,v)$ 只有 $\text{dep}_u+\text{dep}_v-2\times \text{dep}_k>ans$ 且 $h_u+h_v+x>ans$ 时 $ans$ 才可被更新。
 
-设 $M*{i,j}$ 表示 $i$ 子树里面 $h_*{x}=j$ 的最大的 $\text{dep}_x$。
+设 $M_{i,j}$ 表示 $i$ 子树里面 $h_{x}=j$ 的最大的 $\text{dep}_x$。
 
-由于 $i$ 的子树里面不可能 $d$ 全都大于 $d*i$，因为一定有 $0$，并且相邻的两个点 $d$ 值相差不超过 $1$，所以 $0\sim d\_i$ 都会在 $i$ 的子树里面出现，那么 $M\_*{i,j}\geq M_{i,j+1}$。
+由于 $i$ 的子树里面不可能 $d$ 全都大于 $d*i$，因为一定有 $0$，并且相邻的两个点 $d$ 值相差不超过 $1$，所以 $0\sim d\_i$ 都会在 $i$ 的子树里面出现，那么 $M_{i,j}\geq M_{i,j+1}$。
 
-然后对于 $k$ 的两个个儿子 $a$ 和 $b$，它们子树里如果存在能让 $ans$ 更新的点对，说明存在 $i,j$，使得 $i+j+x>ans$ 且 $M_*{a,i}+M_*{b,j}-2\times\text{dep}_k>ans$。
+然后对于 $k$ 的两个个儿子 $a$ 和 $b$，它们子树里如果存在能让 $ans$ 更新的点对，说明存在 $i,j$，使得 $i+j+x>ans$ 且 $M_{a,i}+M_{b,j}-2\times\text{dep}_k>ans$。
 
-移项就得出 $M*{a,i}+M*{b,\max(ans-x-i+1,0)}-2\times \text{dep}_k>ans$。
+移项就得出 $M_{a,i}+M_{b,\max(ans-x-i+1,0)}-2\times \text{dep}_k>ans$。
 
 容易发现 $M_{i,j}$ 不为 $0$ 说明 $j$ 不超过 $i$ 这个子树里面的长链长度，所以直接长剖优化即可。
 
