@@ -26,9 +26,9 @@ $3\leq n\leq 10^6,1\leq q\leq 10$
 
 考虑转化一下 $d(u,v)$。
 
-设 $h_i$ 表示 $i$ 到叶子节点的最短距离，那么 $d(u,v)$ 就等于 $\min\left{\text{dist}(u,v),h_u+h_v+x\right}$。
+设 $h_i$ 表示 $i$ 到叶子节点的最短距离，那么 $d(u,v)$ 就等于 $\min\{\text{dist}(u,v),h_u+h_v+x\}$。
 
-然后枚举一下 $u$ 和 $v$ 的 $\text{LCA}$，设它为 $k$。那么 $d(u,v)=\min\left{\text{dep}_u+\text{dep}_v-2\times \text{dep}_k,h_u+h_v+x\right}$。
+然后枚举一下 $u$ 和 $v$ 的 $\text{LCA}$，设它为 $k$。那么 $d(u,v)=\min\{\text{dep}_u+\text{dep}_v-2\times \text{dep}_k,h_u+h_v+x\}$。
 
 如果当前的答案为 $ans$，$d(u,v)$ 只有 $\text{dep}_u+\text{dep}_v-2\times \text{dep}_k>ans$ 且 $h_u+h_v+x>ans$ 时 $ans$ 才可被更新。
 
