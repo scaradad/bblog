@@ -34,7 +34,7 @@ $3\leq n\leq 10^6,1\leq q\leq 10$
 
 如果当前的答案为 $ans$，$d(u,v)$ 只有 $\text{dep}_u+\text{dep}_v-2\times \text{dep}_k>ans$ 且 $h_u+h_v+x>ans$ 时 $ans$ 才可被更新。
 
-设 $M*{i,j}$ 表示 $i$ 子树里面 $h*{x}$ 为 $j$ 的最大的 $\text{dep}_x$。
+设 $M*{i,j}$ 表示 $i$ 子树里面 $h_*{x}=j$ 的最大的 $\text{dep}_x$。
 
 由于 $i$ 的子树里面不可能 $d$ 全都大于 $d*i$，因为一定有 $0$，并且相邻的两个点 $d$ 值相差不超过 $1$，所以 $0\sim d_i$ 都会在 $i$ 的子树里面出现，那么 $M*{i,j}\geq M_{i,j+1}$。
 
