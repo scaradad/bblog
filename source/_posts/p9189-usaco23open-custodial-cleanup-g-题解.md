@@ -45,7 +45,7 @@ $1 \le T \le 100$, $1 \le \sum N \le 10^5$, $1 \le \sum M \le 2\cdot 10^5$。
 
 但是这样有个问题，如果一个钥匙颜色为 $1$ 的点旁边有很多颜色为 $2$ 的点，但是 $1$ 点走很多步能到达一个钥匙颜色为 $2$ 的点 $u$，且 $u$ 与这些颜色为 $2$ 的点不相邻，这个做法就无法捡到所有钥匙。
 
-考虑用一个 set $st_i$ 维护当前所有遍历过的点中，颜色为 $i$ 的点中有多少还不能捡，那么每次从队列里取出一个点 $u$，就可以先把所有 $st_{s_u}$ 里的点捡了，然后继续像上面那样遍历即可。
+考虑用一个 vector $st_i$ 维护当前所有遍历过的点中，颜色为 $i$ 的点中有多少还不能捡，那么每次从队列里取出一个点 $u$，就可以先把所有 $st_{s_u}$ 里的点捡了，然后继续像上面那样遍历即可。
 
 ---
 
@@ -59,7 +59,7 @@ $1 \le T \le 100$, $1 \le \sum N \le 10^5$, $1 \le \sum M \le 2\cdot 10^5$。
 
 还有个细节就是不一定能捡到全部的钥匙，那么说明第一次 bfs 中没有被捡的点一定不会再被改变，那么如果它们的初始钥匙和结束钥匙颜色不同就说明一定不合法。而且第二次 bfs 如果遇到了个不可能被经过的点就直接跳过，否则有可能 bfs 到一个不可能经过的点 $v$，满足 $c_v\notin \text{total}$，但是如果 $c_v=s_v=f_v$ 的话会误判为可以经过。
 
-时间复杂度：$O\left((n+m)\log n\right)$。
+时间复杂度：$O\left(n+m\right)$。
 
 ## Code
 
@@ -73,8 +73,7 @@ const int kMaxN = 1e5 + 5;
 int n, m;
 int c[kMaxN], s[kMaxN], f[kMaxN];
 bool have[kMaxN], vis[kMaxN], v1[kMaxN];
-std::vector<int> G[kMaxN];
-std::set<int> st[kMaxN];
+std::vector<int> G[kMaxN], st[kMaxN];
 
 bool bfs1() {
   std::queue<int> q;
@@ -92,7 +91,7 @@ bool bfs1() {
     for (auto v : G[u]) {
       if (vis[v]) continue;
       if (have[c[v]]) q.emplace(v), vis[v] = have[s[v]] = 1;
-      else st[c[v]].emplace(v);
+      else st[c[v]].emplace_back(v);
     }
   }
   for (int i = 1; i <= n; ++i)
@@ -120,7 +119,7 @@ bool bfs2() {
     for (auto v : G[u]) {
       if (vis[v] || v1[v]) continue;
       if (have[c[v]] || c[v] == f[v]) q.emplace(v), vis[v] = have[f[v]] = 1;
-      else st[c[v]].emplace(v);
+      else st[c[v]].emplace_back(v);
     }
   }
   for (int i = 1; i <= n; ++i)
