@@ -219,7 +219,7 @@ footer:
   copyright:
 
   # Powered by Hexo & NexT
-  powered: true
+  powered: false
 
   # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
@@ -521,7 +521,7 @@ tabs:
 # So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
 # Dependencies: https://github.com/next-theme/theme-next-pdf
 pdf:
-  enable: false
+  enable: true
   # Default height
   height: 500px
 
@@ -574,7 +574,7 @@ math:
 
 # Easily enable fast Ajax navigation on your website.
 # For more information: https://github.com/next-theme/pjax
-pjax: false
+pjax: true
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox/
@@ -587,7 +587,7 @@ mediumzoom: false
 
 # Vanilla JavaScript plugin for lazyloading images.
 # For more information: https://apoorv.pro/lozad.js/demo/
-lazyload: false
+lazyload: true
 
 # Automatically insert whitespace between CJK and half-width characters.
 # For more information: https://github.com/vinta/pangu.js
@@ -712,7 +712,7 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io
 gitalk:
-  enable: true
+  enable: false
   github_id: scaradad # GitHub repo owner
   repo: scaradad.github.io # Repository name to store issues
   client_id: 7b7f10f5c449865d69cd # GitHub Application Client ID
@@ -854,7 +854,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
