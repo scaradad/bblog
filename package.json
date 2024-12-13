@@ -33,7 +33,7 @@
     "hexo-theme-icarus": "^5.2.1",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.17.0",
-    "inferno": "^7.3.3",
+    "inferno": "^8.2.2",
     "inferno-create-element": "^7.3.3",
     "pip": "^0.0.1",
     "semver": "^7.5.4"
